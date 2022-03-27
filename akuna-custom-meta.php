@@ -13,3 +13,4 @@
 
 require_once 'inc/class-akuna-product-meta.php';
 require_once 'inc/class-akuna-page-meta.php';
+require_once 'inc/class-akuna-product-tag-meta.php';
