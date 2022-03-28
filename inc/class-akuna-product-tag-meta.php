@@ -93,6 +93,7 @@ if (!class_exists('Akuna_Product_Tag_Meta')) :
                         if (request && 4 === request.readyState && 200 === request.status &&
                             options.data && 0 <= options.data.indexOf('action=add-tag')) {
 
+                            console.log(request)
                             var res = wpAjax.parseAjaxResponse(request.responseXML, 'ajax-response');
                             if (!res || res.errors) {
                                 return;
@@ -187,7 +188,6 @@ if (!class_exists('Akuna_Product_Tag_Meta')) :
 
         public function save_product_tag_image($term_id, $tt_id, $taxonomy)
         {
-            echo '<pre>', var_dump($taxonomy), '</pre>';
             if (isset($_POST['product_tag_thumbnail_id']) && 'product_tag' === $taxonomy) { // WPCS: CSRF ok, input var ok.
                 update_term_meta($term_id, 'thumbnail_id', absint($_POST['product_tag_thumbnail_id'])); // WPCS: CSRF ok, input var ok.
             }
